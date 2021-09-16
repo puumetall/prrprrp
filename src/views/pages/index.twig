@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.scss">
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="/">home page</a></li>
-            <li><a href="/about.html">about</a></li>
-            <li><a href="/contact.html">contact</a></li>
-        </ul>
-    </nav>
-     home page
-</body>
-</html>
+{% extends "../partials/layout.twig" %}
+{% block content %}
+    home page
+    {% for i in range(1, 100) %}
+        {% if i != 10 %}
+            {{i}}
+        {% else %}
+           {{i}} 
+        {% endif %}
+    {% endfor %}
+
+    {% for post in htmlWebpackPlugin.options.posts %}
+        <h1>{{post.title}}</h1>
+        <p>{{post.content}}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}

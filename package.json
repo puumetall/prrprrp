@@ -15,7 +15,6 @@
         "boxen": "^5.0.1",
         "css-loader": "^6.2.0",
         "dev-server": "^0.2.0",
-        "html-webpack-plugin": "^5.3.2",
         "node-sass": "^6.0.1",
         "sass-loader": "^12.1.0",
         "style-loader": "^3.2.1",
@@ -27,6 +26,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.15.5",
+        "html-webpack-plugin": "^5.3.2",
         "webpack-cli": "^4.8.0"
     }
 }

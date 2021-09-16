@@ -1,4 +1,4 @@
-require('./styles.scss')
+require('./styles.scss');
 const logger = require('./log.js');
 logger.log("hello");
 require('./index.ts');
@@ -9,5 +9,5 @@ class hello {
     }
 }
 
-let helloObj = new hello()
-helloObj.hello()
+let helloObj = new hello();
+helloObj.hello();
