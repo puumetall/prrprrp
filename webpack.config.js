@@ -41,6 +41,8 @@ module.exports = {
     ],
   },
   plugins: [
-      new HtmlWebpackPlugin({ template: './src/views/pages/index.twig' })
+      new HtmlWebpackPlugin({ template: './src/views/pages/index.twig', filename:"index.html" }),
+      new HtmlWebpackPlugin({ template: './src/views/pages/about.twig', filename:"about.html" }),
+      new HtmlWebpackPlugin({ template: './src/views/pages/contact.twig', filename:"contact.html" })
     ],
 };
