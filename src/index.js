@@ -1,3 +1,10 @@
+let Vue = require('vue/dist/vue.common.dev');
+new Vue ({
+    el: '#app',
+    data: {
+        greeting: 'hello vue!',
+    }
+});
 let sum = 0;
 for (let i = 0; i <= 100; i++) {
   
@@ -62,4 +69,27 @@ function nthPrime(nth){
     }
     return P[P.length-1];
 };
-console.log(nthPrime(10001))
+console.log(nthPrime(10001));
+
+let people = [
+    {name: 'vello', age: 34},
+    {name: 'martin', age: 17},
+    {name: 'kaspar', age: 64},
+    {name: 'manivald', age: 58},
+    {name: 'maria', age: 23},
+    {name: 'virginia', age: 14},
+    {name: 'malle', age: 83},
+    {name: 'kati', age: 26},
+];
+const findAverageAge = (arr = []) => {
+    const { sum, count } = arr.reduce((acc, val) => {
+       let { sum, count } = acc;
+       sum += val.age;
+       count++;
+       return { sum, count };
+       }, {
+          sum: 0, count: 0
+    });
+    return (sum / (count || 1));
+ };
+ console.log(findAverageAge(people));
