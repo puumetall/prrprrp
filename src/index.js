@@ -25,10 +25,10 @@ console.log(fibonazi(4000000));
 
 function largestPalindrome(){
 
-    var arr = [];    
-    for(var i =999; i>100; i--){
-        for(var j = 999; j>100; j--){
-            var mul = j*i;
+    let arr = [];    
+    for(let i =999; i>100; i--){
+        for(let j = 999; j>100; j--){
+            let mul = j*i;
             if(isPalin(mul)){
                 arr.push(j * i);
             }
@@ -45,7 +45,7 @@ function isPalin(i){
 console.log(largestPalindrome());
 
 function nthPrime(nth){
-    var P= [2], n= 3, div, i, limit,isPrime;
+    let P= [2], n= 3, div, i, limit,isPrime;
     while(P.length<nth){
         div= 3, i= 1;
         limit= Math.sqrt(n)+1;
