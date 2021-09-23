@@ -1,53 +1,65 @@
-for(let i = 0 ; i<10 ; i++){
-    console.log(i)
-}
-
-let tups = ['lime','cold','ice']
-for(let j = 0; j<tups.length; j++) {
-    if (tups[j] === 'lime') {
-        console.log('Mulle meeldib' + ' ' + tups[j])
-    } else {
-        console.log('Mulle ei meeldi' + ' ' + tups[j])
+let sum = 0;
+for (let i = 0; i <= 100; i++) {
+  
+    if (i % 3 === 0 || i % 5 === 0) {
+    sum += i;
     }
 }
-let num = 2;
-while(num<1000000) {
-    num*=2;
-    console.log(num)
-}
-num = 1;
-while(num>1) {
-    console.log('while:' + num);
-}
-do {
-    console.log('do:' + num);
-}while(num>1);
-
-let fruits = ['apple','cherry','pear'];
-fruits.forEach((fruit, key)=> {
-    fruits='baah';
-    console.log('key:' + key + 'value:' + fruit)
-});
-
-let newFruits = [fruits].map((fruit, key)=> {
-    return fruit+key;
-});
-
-console.log(newFruits);
-
-let nums = [1,2,3,4,5,6,7,8,9];
-let sum = nums.reduce((sum, value)=>{
-    return sum + value;
-});
-
 console.log(sum);
-nums = [5,2,3,7,4,1,9,6,8];
-let sortedNums = nums.sort((a,b) => {
-    if(a>b){
-        return 1;
-    } else if(a<b) {
-        return -1;
+
+function fibonazi(max) {
+    let a = 1, b = 2;
+    let sum = 0;
+    while (a <= max) {
+        if (a % 2 === 0) {
+            sum += a;
+        }    
+        let c = a + b;
+        a = b;
+        b = c;
     }
-    return 0;
-});
-console.log(sortedNums);
+    return sum;
+}
+ 
+console.log(fibonazi(4000000));
+
+function largestPalindrome(){
+
+    var arr = [];    
+    for(var i =999; i>100; i--){
+        for(var j = 999; j>100; j--){
+            var mul = j*i;
+            if(isPalin(mul)){
+                arr.push(j * i);
+            }
+        }
+    }
+
+    return Math.max.apply(Math, arr);
+};
+
+function isPalin(i){
+    return i.toString() == i.toString().split("").reverse().join("");
+};
+
+console.log(largestPalindrome());
+
+function nthPrime(nth){
+    var P= [2], n= 3, div, i, limit,isPrime;
+    while(P.length<nth){
+        div= 3, i= 1;
+        limit= Math.sqrt(n)+1;
+        isPrime= true;
+        while(div<limit){
+            if(n%div=== 0){
+                isPrime= false;
+                div= limit;
+            }
+            else div= P[i++] || div+ 2;
+        }
+        if(isPrime) P.push(n);
+        n+= 2;
+    }
+    return P[P.length-1];
+};
+console.log(nthPrime(10001))
