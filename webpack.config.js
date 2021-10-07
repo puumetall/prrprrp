@@ -63,7 +63,7 @@ module.exports = {
       // }),
       // new HtmlWebpackPlugin({ template: './src/views/pages/about.twig', filename: 'about.html' }),
       // new HtmlWebpackPlugin({ template: './src/views/pages/contact.twig', filename: 'contact.html' })
-      new HtmlWebpackPlugin({template: './src/index.html'}),
+      new HtmlWebpackPlugin({ template: './src/index.html'}),
       new VueLoaderPlugin(),
-  ]
+    ],
 };
